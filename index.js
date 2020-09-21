@@ -56,7 +56,7 @@
 		else{
 			items = arr;
 		}
-		let str = items.join(sep);
+		let str = items.join(sep); 
 		return str;
 	}
 	
