@@ -18,6 +18,7 @@
 	
 	const regWords = /([A-Z]+(?![a-z\d])|[A-Z][a-z\d]+)/g;
 	const regWord = /^([A-Z]+(?![a-z\d])|[A-Z][a-z\d]+)$/;
+	const regAbbr = /^([A-Z]+(?![a-z\d])$/;
 	
 	function splitWords(s){
 		let items = s.split(regWords).filter((a)=>(a));
@@ -48,7 +49,7 @@
 	function recursiveJoin(arr, levels, callback){
 		let next = levels.slice(1), sep = levels[0], items;
 		if(next.length){
-			items = arr.map(a=>recursiveJoin(a, next, callback))
+			items = arr.map(a=>recursiveJoin(a, next, callback));
 		}
 		else if(callback){
 			items = arr.map(callback);
